@@ -164,9 +164,9 @@ class Tarea{
 
       let resultado = document.getElementById('resultado');
       if (numerosComprendidos.length > 0) {
-        resultado.innerHTML = `<p>Números comprendidos entre ${numero1} y ${numero2}: ${numerosComprendidos.join(', ')}</p>`;
+        resultado.innerHTML = "Números comprendidos entre " +numero1+ "y" +numero2+ ":" +numerosComprendidos.join(', ');
       } else {
-        resultado.innerHTML = `<p>No hay números comprendidos entre ${numero1} y ${numero2}.</p>`;
+        resultado.innerHTML = "No hay números comprendidos entre " +numero1+ "y" +numero2+".";
      }
     }
 
@@ -183,9 +183,9 @@ class Tarea{
       }
       let resultado = document.getElementById('resultado');
       if (numerosParesComprendidos.length > 0) {
-        resultado.innerHTML = `Números pares comprendidos entre ${numero1} y ${numero2}: ${numerosParesComprendidos.join(', ')}`;
+        resultado.innerHTML = "Números comprendidos entre " +numero1+ "y" +numero2+ ":" +numerosParesComprendidos.join(', ');;
       } else {
-        resultado.innerHTML = `No hay números pares comprendidos entre ${numero1} y ${numero2}.`;
+        resultado.innerHTML = "No hay números comprendidos entre " +numero1+ "y" +numero2+".";
       }
     }
 
@@ -321,41 +321,40 @@ class Tarea{
     }
 
     Codun17(){
+      //hecho por chatgpt debido a que no lo entendi 
       const numerosInput = document.getElementById('numeros').value;
-    const numerosArray = numerosInput.split(',').map(Number);
+      const numerosArray = numerosInput.split(',').map(Number);
 
-    // Verificar que se hayan ingresado exactamente 10 números
-    if (numerosArray.length !== 10 || numerosArray.some(isNaN)) {
+      // Verificar que se hayan ingresado exactamente 10 números
+      if (numerosArray.length !== 10 || numerosArray.some(isNaN)) {
         alert("Por favor, ingrese exactamente 10 números válidos separados por comas.");
         return;
-    }
+      }
 
-    // Obtener el número específico a buscar
-    const numeroEspecifico = parseInt(document.getElementById('numero-especifico').value);
+      // Obtener el número específico a buscar
+      const numeroEspecifico = parseInt(document.getElementById('numero-especifico').value);
 
-    // Verificar que el número específico sea válido
-    if (isNaN(numeroEspecifico)) {
+      // Verificar que el número específico sea válido
+      if (isNaN(numeroEspecifico)) {
         alert("Por favor, ingrese un número válido a buscar.");
         return;
-    }
+      }
 
-    // Contar cuántas veces aparece el número específico en el arreglo
-    let contador = 0;
-    for (let i = 0; i < numerosArray.length; i++) {
+       // Contar cuántas veces aparece el número específico en el arreglo
+      let contador = 0;
+      for (let i = 0; i < numerosArray.length; i++) {
         if (numerosArray[i] === numeroEspecifico) {
             contador++;
         }
-    }
+      }
 
-    // Mostrar el resultado en el div con id "resultado"
-    const resultado = document.getElementById('resultado');
-    resultado.innerHTML = `<p>El número ${numeroEspecifico} aparece ${contador} veces en el arreglo.</p>`;
+       const resultado = document.getElementById('resultado');
+        resultado.innerHTML = `<p>El número ${numeroEspecifico} aparece ${contador} veces en el arreglo.</p>`;
     }
 
     Neoi18(){
       let numeros = [];
 
-             // Obtener el valor del input y separarlo en un array de números
               let ingreso = document.getElementById("ingreso").value;
               let numerosIngresados = ingreso.split(',');
               let resultadoDiv = document.getElementById("resp");
@@ -368,7 +367,6 @@ class Tarea{
                 }
                 numeros.reverse()
 
-                // Mostrar los números pares en el div 'resp'
                 resultadoDiv.innerHTML = "Los datos del areglo en reversa son: " + numeros.join(', ');
             }
 
@@ -397,30 +395,20 @@ class Tarea{
             }*/
                 const numerosInput = document.getElementById('msg').value;
                 const numeroConsultar = parseInt(document.getElementById('n').value);
-            
-                // Convertir la cadena de números en un arreglo de números
                 let numerosArray = numerosInput.split(',').map(Number);
-            
-                // Filtrar los números que son mayores que el número específico
                 let numerosMayores = numerosArray.filter(numero => numero > numeroConsultar);  
-            
-                // Mostrar los resultados en el div de respuesta
                 const respuestaDiv = document.getElementById('resp');
                 respuestaDiv.innerHTML = `Los números mayores que ${numeroConsultar} son: ${numerosMayores.join(', ')}`;
             }
 
     Ed20(){
      
-        // Obtener el valor de los números ingresados
         const numerosInput = document.getElementById('numeros').value;
     
-        // Convertir la cadena de números en un arreglo de números
         const numerosArray = numerosInput.split(',').map(Number);
     
-        // Filtrar los ceros del arreglo
         const ceros = numerosArray.filter(numero => numero === 0);
     
-        // Mostrar los ceros en el div de respuesta
         const respuestaDiv = document.getElementById('resp');
         if (ceros.length > 0) {
             respuestaDiv.textContent = `Los ceros encontrados son: ${ceros.join(', ')}`;
@@ -481,7 +469,7 @@ class Tarea{
       let cadenaMayusculas = cadenaInput.toUpperCase();
 
       let respuestaDiv = document.getElementById('resp');
-      respuestaDiv.textContent = `La cadena en mayúsculas es: ${cadenaMayusculas}`;
+      respuestaDiv.textContent = "La cadena en mayúsculas es: " +cadenaMayusculas;
     }
 
     Cp25(){
@@ -544,7 +532,7 @@ class Tarea{
           let cadenaInput = document.getElementById("ingreso").value
           let cadenaSinEspacios = cadenaInput.replace(/\s/g, '');
           let respuestaDiv = document.getElementById("resp");
-          respuestaDiv.textContent= `La cadena sin espacios es: ${cadenaSinEspacios}`;
+          respuestaDiv.textContent= "La cadena sin espacios es: " + cadenaSinEspacios;
       
       
       }
