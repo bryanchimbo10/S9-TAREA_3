@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frecuencia del Último Carácter</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Frecuencia del Último Carácter</h1>
+    </header>
+    <main>
+        <section class="container">
+            <form>
+                <label for="cadena">
+                    <input type="text" id="cadena" placeholder="Ingrese una cadena">
+                </label>
+                <div class="botones">
+                    <button type="button" class="boton" onclick="contarFrecuencia()">Aceptar</button>
+                    <button type="reset" class="boton">Resetear</button>
+                </div>
+                <div id="resp">
+                    LA FRECUENCIA DEL ÚLTIMO CARÁCTER SE REFLEJARÁ AQUÍ
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p><h5>Derechos Reservados - Programador Bryan</h5></p>
+    </footer>
+    <script>
+        function contarFrecuencia() {
+            // Obtener la cadena ingresada por el usuario
+            const cadenaInput = document.getElementById('cadena').value;
+
+            // Validar si la cadena no está vacía
+            /*if (cadenaInput.length === 0) {
+                alert('Por favor, ingrese una cadena.');
+                return;
+            }*/
+
+            // Obtener el último carácter de la cadena
+            const ultimoCaracter = cadenaInput[cadenaInput.length - 1];
+
+            // Contar la frecuencia del último carácter en la cadena
+            let frecuencia = 0;
+            for (let i = 0; i < cadenaInput.length; i++) {
+                if (cadenaInput[i] === ultimoCaracter) {
+                    frecuencia++;
+                }
+            }
+
+            // Mostrar la frecuencia en el div de respuesta usando innerHTML
+            const respuestaDiv = document.getElementById('resp');
+            respuestaDiv.innerHTML = `La frecuencia del último carácter '${ultimoCaracter}' en la cadena es: ${frecuencia}`;
+        }
+    </script>
+</body>
+</html>
